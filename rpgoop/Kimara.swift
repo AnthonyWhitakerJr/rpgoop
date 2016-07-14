@@ -20,6 +20,10 @@ class Kimara: Enemy {
         return "Kimara"
     }
     
+    init(startingHp: Int, attackPower: Int) {
+        super.init(startingHp: startingHp, attackPower: attackPower, imageName: "enem1")
+    }
+    
     override func attemptAttack(attackPower: Int) -> Bool {
         if attackPower >= IMMUNNITY_MAX {
             return super.attemptAttack(attackPower)

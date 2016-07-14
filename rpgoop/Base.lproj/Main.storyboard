@@ -38,12 +38,16 @@
                                 <color key="textColor" red="1" green="0.71672315443508094" blue="0.066319778819354469" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chest" translatesAutoresizingMaskIntoConstraints="NO" id="6LK-I3-t9x">
-                                <rect key="frame" x="418" y="425" width="94" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-cO-z7K">
+                                <rect key="frame" x="418" y="425" width="90" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6LK-I3-t9x" secondAttribute="height" multiplier="393:440" id="7Yx-JO-Nnh"/>
+                                    <constraint firstAttribute="width" secondItem="ARM-cO-z7K" secondAttribute="height" multiplier="393:440" id="qex-Gl-r3t"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="chest"/>
+                                <connections>
+                                    <action selector="onChestButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWq-tu-Uye"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIV-5R-bKR">
                                 <rect key="frame" x="-404" y="525" width="1408" height="75"/>
                                 <subviews>
@@ -114,7 +118,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ivc-3F-H1u" firstAttribute="centerY" secondItem="h7N-8D-YRF" secondAttribute="centerY" id="0mp-OI-N2h"/>
-                            <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="6LK-I3-t9x" secondAttribute="bottom" id="20g-Ye-Eb9"/>
                             <constraint firstItem="IDo-7B-kci" firstAttribute="top" secondItem="9nC-E6-WkS" secondAttribute="top" constant="40" id="5AC-hb-2Hz"/>
                             <constraint firstItem="9nC-E6-WkS" firstAttribute="leading" secondItem="IDo-7B-kci" secondAttribute="trailing" constant="8" id="7DE-TC-tKe"/>
                             <constraint firstAttribute="bottom" secondItem="ZIV-5R-bKR" secondAttribute="bottom" id="8SW-Dx-7EU"/>
@@ -123,19 +126,27 @@
                             <constraint firstItem="h7N-8D-YRF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E7P-JR-Crj"/>
                             <constraint firstAttribute="trailing" secondItem="qTv-Pm-3Nv" secondAttribute="trailing" id="Mr5-ic-geI"/>
                             <constraint firstItem="ziM-l1-Hc1" firstAttribute="top" secondItem="EaJ-zn-M8M" secondAttribute="top" constant="40" id="PCm-NP-nYY"/>
+                            <constraint firstItem="ARM-cO-z7K" firstAttribute="centerX" secondItem="9nC-E6-WkS" secondAttribute="centerX" id="Rrs-kX-oV3"/>
                             <constraint firstItem="ivc-3F-H1u" firstAttribute="centerX" secondItem="h7N-8D-YRF" secondAttribute="centerX" id="VJu-ow-m4s"/>
-                            <constraint firstItem="6LK-I3-t9x" firstAttribute="centerX" secondItem="9nC-E6-WkS" secondAttribute="centerX" id="WTm-iK-cna"/>
                             <constraint firstItem="EaJ-zn-M8M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WjF-51-UTq"/>
                             <constraint firstItem="9nC-E6-WkS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZQ4-oJ-f3p"/>
-                            <constraint firstItem="6LK-I3-t9x" firstAttribute="width" secondItem="9nC-E6-WkS" secondAttribute="width" multiplier="0.5" id="bz3-JX-gez"/>
+                            <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="ARM-cO-z7K" secondAttribute="bottom" id="feh-oO-onI"/>
                             <constraint firstItem="h7N-8D-YRF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="im6-vw-0Af"/>
                             <constraint firstItem="ziM-l1-Hc1" firstAttribute="leading" secondItem="EaJ-zn-M8M" secondAttribute="trailing" constant="8" id="jr3-3r-Klt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qTv-Pm-3Nv" secondAttribute="bottom" id="kHV-7i-eN8"/>
                             <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="EaJ-zn-M8M" secondAttribute="bottom" id="mLY-NE-JDE"/>
+                            <constraint firstItem="ARM-cO-z7K" firstAttribute="width" secondItem="9nC-E6-WkS" secondAttribute="width" multiplier="0.5" id="pKV-Q8-Amx"/>
                             <constraint firstItem="ZIV-5R-bKR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vIt-AR-8So"/>
                             <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="9nC-E6-WkS" secondAttribute="bottom" id="yXP-Hy-YxI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chestButton" destination="ARM-cO-z7K" id="gbC-Zf-yvi"/>
+                        <outlet property="enemyHpLabel" destination="IDo-7B-kci" id="8GV-9E-zVj"/>
+                        <outlet property="enemyImage" destination="9nC-E6-WkS" id="Rej-eh-bpH"/>
+                        <outlet property="playerHpLabel" destination="ziM-l1-Hc1" id="kpH-bf-EJS"/>
+                        <outlet property="printLabel" destination="h7N-8D-YRF" id="xyz-By-b0p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

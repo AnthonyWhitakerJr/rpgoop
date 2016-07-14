@@ -16,4 +16,8 @@ class DevilWizard: Enemy {
     override var type: String {
         return "Devil Wizard"
     }
+    
+    init(startingHp: Int, attackPower: Int) {
+        super.init(startingHp: startingHp, attackPower: attackPower, imageName: "enem2")
+    }
 }

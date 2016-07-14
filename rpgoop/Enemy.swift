@@ -18,6 +18,17 @@ class Enemy: Character {
         return "Grunt"
     }
     
+    private var _imageName: String
+    
+    var imageName: String {
+        return _imageName
+    }
+    
+    init(startingHp: Int, attackPower: Int, imageName: String) {
+        _imageName = imageName
+        super.init(startingHp: startingHp, attackPower: attackPower)
+    }
+    
     func dropLoot() -> String? {
         if !isAlive {
             let rand = Int(arc4random_uniform(UInt32(loot.count)))
