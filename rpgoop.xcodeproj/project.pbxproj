@@ -17,6 +17,7 @@
 		92E5DB221D38072F00DB3E4E /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5DB211D38072F00DB3E4E /* Enemy.swift */; };
 		92E5DB241D3808B600DB3E4E /* Kimara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5DB231D3808B600DB3E4E /* Kimara.swift */; };
 		92E5DB281D3809CB00DB3E4E /* DevilWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5DB271D3809CB00DB3E4E /* DevilWizard.swift */; };
+		92E5DB6A1D385C9500DB3E4E /* Demiurga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5DB691D385C9500DB3E4E /* Demiurga.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		92E5DB211D38072F00DB3E4E /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		92E5DB231D3808B600DB3E4E /* Kimara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kimara.swift; sourceTree = "<group>"; };
 		92E5DB271D3809CB00DB3E4E /* DevilWizard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevilWizard.swift; sourceTree = "<group>"; };
+		92E5DB691D385C9500DB3E4E /* Demiurga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demiurga.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				92E5DB0B1D38025500DB3E4E /* AppDelegate.swift */,
 				92E5DB0D1D38025500DB3E4E /* ViewController.swift */,
+				92E5DB691D385C9500DB3E4E /* Demiurga.swift */,
 				92E5DB0F1D38025500DB3E4E /* Main.storyboard */,
 				92E5DB121D38025500DB3E4E /* Assets.xcassets */,
 				92E5DB141D38025500DB3E4E /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 				92E5DB241D3808B600DB3E4E /* Kimara.swift in Sources */,
 				92E5DB1E1D3804BB00DB3E4E /* Character.swift in Sources */,
 				92E5DB0E1D38025500DB3E4E /* ViewController.swift in Sources */,
+				92E5DB6A1D385C9500DB3E4E /* Demiurga.swift in Sources */,
 				92E5DB0C1D38025500DB3E4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

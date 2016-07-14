@@ -21,11 +21,13 @@ class ViewController: UIViewController {
     var enemy: Enemy!
     var chestContents: String?
     
+    let ENEMY_TYPES: UInt32 = 3
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        player = Player(name: "Ace", startingHp: 110, attackPower: 20)
+        player = Player(name: "Porschaé", startingHp: 110, attackPower: 20)
         
         playerHpLabel.text = "\(player.hp) HP"
         
@@ -33,13 +35,15 @@ class ViewController: UIViewController {
     }
     
     func generateRandomEnemy() {
-        let rand = Int(arc4random_uniform(2))
+        let rand = Int(arc4random_uniform(ENEMY_TYPES))
         
         switch rand {
         case 0:
             enemy = Kimara(startingHp: 50, attackPower: 12)
         case 1:
             enemy = DevilWizard(startingHp: 60, attackPower: 15)
+        case 2:
+            enemy = Demiurga(startingHp: 70, attackPower: 18)
         default:
             break
         }
@@ -50,11 +54,6 @@ class ViewController: UIViewController {
         enemyHpLabel.text = "\(enemy.hp) HP"
         
         printLabel.text = "A wild \(enemy.type) appeared!"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func onChestButtonPressed(sender: UIButton) {
