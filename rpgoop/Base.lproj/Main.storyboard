@@ -38,7 +38,7 @@
                                 <color key="textColor" red="1" green="0.71672315443508094" blue="0.066319778819354469" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-cO-z7K">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-cO-z7K">
                                 <rect key="frame" x="418" y="425" width="90" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ARM-cO-z7K" secondAttribute="height" multiplier="393:440" id="qex-Gl-r3t"/>
@@ -114,6 +114,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-E3-3DX">
+                                <rect key="frame" x="501" y="490" width="89" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Oaa-K0-3sM"/>
+                                    <constraint firstAttribute="width" secondItem="wy6-E3-3DX" secondAttribute="height" multiplier="198:223" id="mbp-1y-IRn"/>
+                                </constraints>
+                                <state key="normal" image="attack"/>
+                                <connections>
+                                    <action selector="onAttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="do3-TV-6eY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,9 +141,11 @@
                             <constraint firstItem="ivc-3F-H1u" firstAttribute="centerX" secondItem="h7N-8D-YRF" secondAttribute="centerX" id="VJu-ow-m4s"/>
                             <constraint firstItem="EaJ-zn-M8M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WjF-51-UTq"/>
                             <constraint firstItem="9nC-E6-WkS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZQ4-oJ-f3p"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wy6-E3-3DX" secondAttribute="bottom" constant="10" id="aVq-ab-E6d"/>
                             <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="ARM-cO-z7K" secondAttribute="bottom" id="feh-oO-onI"/>
                             <constraint firstItem="h7N-8D-YRF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="im6-vw-0Af"/>
                             <constraint firstItem="ziM-l1-Hc1" firstAttribute="leading" secondItem="EaJ-zn-M8M" secondAttribute="trailing" constant="8" id="jr3-3r-Klt"/>
+                            <constraint firstItem="wy6-E3-3DX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="kAd-ik-mad"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qTv-Pm-3Nv" secondAttribute="bottom" id="kHV-7i-eN8"/>
                             <constraint firstItem="ZIV-5R-bKR" firstAttribute="top" secondItem="EaJ-zn-M8M" secondAttribute="bottom" id="mLY-NE-JDE"/>
                             <constraint firstItem="ARM-cO-z7K" firstAttribute="width" secondItem="9nC-E6-WkS" secondAttribute="width" multiplier="0.5" id="pKV-Q8-Amx"/>
@@ -141,11 +154,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackButton" destination="wy6-E3-3DX" id="sS7-kZ-Znp"/>
                         <outlet property="chestButton" destination="ARM-cO-z7K" id="gbC-Zf-yvi"/>
                         <outlet property="enemyHpLabel" destination="IDo-7B-kci" id="8GV-9E-zVj"/>
                         <outlet property="enemyImage" destination="9nC-E6-WkS" id="Rej-eh-bpH"/>
                         <outlet property="playerHpLabel" destination="ziM-l1-Hc1" id="kpH-bf-EJS"/>
-                        <outlet property="printLabel" destination="h7N-8D-YRF" id="xyz-By-b0p"/>
+                        <outlet property="printLabel" destination="ivc-3F-H1u" id="WV9-fz-BdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -154,6 +168,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attack" width="198" height="223"/>
         <image name="bg" width="768" height="1024"/>
         <image name="chest" width="393" height="440"/>
         <image name="enem1" width="574" height="487"/>

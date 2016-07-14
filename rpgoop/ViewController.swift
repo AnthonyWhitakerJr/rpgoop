@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerHpLabel: UILabel!
     @IBOutlet weak var enemyHpLabel: UILabel!
     @IBOutlet weak var enemyImage: UIImageView!
-    @IBOutlet weak var printLabel: UIImageView!
+    @IBOutlet weak var printLabel: UILabel!
     @IBOutlet weak var chestButton: UIButton!
+    @IBOutlet weak var attackButton: UIButton!
     
     var player: Player!
     var enemy: Enemy!
+    var chestContents: String?
     
     
     override func viewDidLoad() {
@@ -28,7 +30,6 @@ class ViewController: UIViewController {
         playerHpLabel.text = "\(player.hp) HP"
         
         generateRandomEnemy()
-        enemyHpLabel.text = "\(enemy.hp) HP"
     }
     
     func generateRandomEnemy() {
@@ -44,6 +45,11 @@ class ViewController: UIViewController {
         }
         
         enemyImage.image = UIImage(named: enemy.imageName)
+        enemyImage.hidden = false
+        
+        enemyHpLabel.text = "\(enemy.hp) HP"
+        
+        printLabel.text = "A wild \(enemy.type) appeared!"
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +58,30 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onChestButtonPressed(sender: UIButton) {
+        chestButton.hidden = true
+        player.addItemToInventory(chestContents!)
+        printLabel.text = "\(player.name) found \(chestContents)"
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.generateRandomEnemy), userInfo: nil, repeats: false)
     }
 
+    @IBAction func onAttackButtonPressed(sender: UIButton) {
+        if enemy.attemptAttack(player.attackPower) {
+            printLabel.text = ("Attacked \(enemy.type) for \(player.attackPower) HP")
+            enemyHpLabel.text = "\(enemy.hp) HP"
+        } else {
+            printLabel.text = "Attack was unsuccessful!"
+        }
+        
+        if let loot = enemy.dropLoot() {
+            chestContents = loot
+            chestButton.hidden = false
+        }
+        
+        if !enemy.isAlive {
+            enemyHpLabel.text = ""
+            printLabel.text = "Killed \(enemy.type)"
+            enemyImage.hidden = true
+        }
+    }
 }
 

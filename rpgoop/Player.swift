@@ -27,4 +27,8 @@ class Player: Character {
         self.init(startingHp: startingHp, attackPower: attackPower)
         _name = name
     }
+    
+    func addItemToInventory(item: String) {
+        _inventory.append(item)
+    }
 }
