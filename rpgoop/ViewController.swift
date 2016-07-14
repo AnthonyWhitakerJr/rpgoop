@@ -22,7 +22,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        player = Player(name: "Ace", startingHp: 110, attackPower: 20)
+        
+        playerHpLabel.text = "\(player.hp) HP"
+        
+        generateRandomEnemy()
+        enemyHpLabel.text = "\(enemy.hp) HP"
+    }
+    
+    func generateRandomEnemy() {
+        let rand = Int(arc4random_uniform(2))
+        
+        switch rand {
+        case 0:
+            enemy = Kimara(startingHp: 50, attackPower: 12)
+        case 1:
+            enemy = DevilWizard(startingHp: 60, attackPower: 15)
+        default:
+            break
+        }
+        
+        enemyImage.image = UIImage(named: enemy.imageName)
     }
 
     override func didReceiveMemoryWarning() {
