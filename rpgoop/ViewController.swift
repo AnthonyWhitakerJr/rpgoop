@@ -60,13 +60,13 @@ class ViewController: UIViewController {
     @IBAction func onChestButtonPressed(sender: UIButton) {
         chestButton.hidden = true
         player.addItemToInventory(chestContents!)
-        printLabel.text = "\(player.name) found \(chestContents)"
+        printLabel.text = "\(player.name) found \(chestContents!)"
         NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.generateRandomEnemy), userInfo: nil, repeats: false)
     }
 
     @IBAction func onAttackButtonPressed(sender: UIButton) {
         if enemy.attemptAttack(player.attackPower) {
-            printLabel.text = ("Attacked \(enemy.type) for \(player.attackPower) HP")
+            printLabel.text = ("Attacked \(enemy.type) for \(player.attackPower) damage")
             enemyHpLabel.text = "\(enemy.hp) HP"
         } else {
             printLabel.text = "Attack was unsuccessful!"
